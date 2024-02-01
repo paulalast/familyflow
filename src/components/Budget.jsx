@@ -157,7 +157,6 @@ const Budget = () => {
 								</li>
 							)
 						})}
-
 						<TextButton onClick={openIncomeModal} buttonText='+' />
 						<AddIncomeModal
 							isOpen={isIncomeModalOpen}
@@ -180,8 +179,18 @@ const Budget = () => {
 									key={index}
 									className='flex w-full justify-between items-center'
 								>
-									<p>{expense.name}</p>
-									<p>{expense.amount}</p>
+									<div className='flex justify-between w-4/5'>
+										<p>{expense.name}</p>
+										<p>{expense.amount}</p>
+									</div>
+									<div className='flex gap- justify-center items-center'>
+										<button className='bg-transparent p-2'>
+											<img src='edit.png' alt='' className='w-3 h-3' />
+										</button>
+										<button className='bg-transparent p-2 '>
+											<img src='bin.png' alt='' className='w-3 h-3' />
+										</button>
+									</div>
 								</li>
 							)
 						})}
