@@ -12,8 +12,8 @@ export default {
 				honeyWhite: "#ECFFEB",
 			},
 			fontFamily: {
-				headerFont: ["Advent Pro", "sans-serif"],
-				mainFont: ["Comfortaa", "sans-serif"],
+				headerFont: ["Playfair Display", "serif"],
+				mainFont: ["Nixie One", "system-ui"],
 			},
 		},
 	},
