@@ -29,8 +29,8 @@ const Budget = ({
 			<h2 className='flex text-5xl uppercase font-semibold h-1/5 items-end py-1'>
 				Budżet
 			</h2>
-			<div className='flex w-full justify-center gap-4 font-bold uppercase my-1 h-4/5'>
-				<div className='relative w-1/2 shadow-lg p-4 rounded-xl bg-slate-200/80'>
+			<div className='flex flex-col md:flex-row w-full justify-center gap-4 font-bold uppercase my-1 h-4/5'>
+				<div className='relative h-1/2 md:h-4/5 min-h-1/2 md:w-1/2 shadow-lg p-4 rounded-xl bg-slate-200/80'>
 					<h3 className='uppercase text-xl font-bold bg-slate-100 p-2 rounded-xl'>
 						Wpływy
 					</h3>
@@ -90,7 +90,7 @@ const Budget = ({
 						Suma wpływów: <span> {totalIncomes} </span>{" "}
 					</p>
 				</div>
-				<div className=' relative w-1/2 shadow-lg  p-4 rounded-xl bg-slate-200/80'>
+				<div className=' relative h-1/2 md:h-4/5 min-h-1/2 md:w-1/2 shadow-lg  p-4 rounded-xl bg-slate-200/80'>
 					<h3 className='uppercase text-xl font-bold bg-slate-100 p-2 rounded-xl'>
 						Wydatki
 					</h3>
