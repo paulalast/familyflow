@@ -1,6 +1,8 @@
 import React from "react"
+import Button from "./Button"
+import TaskView from "./TaskView"
 
-const Navigation = () => {
+const Navigation = ({ onBudgetClick, onCalendarClick, onTaskClick }) => {
 	return (
 		<div className='h-fit fixed top-0 left-0 w-full bg-white/60 text-lg '>
 			<div className='container mx-auto flex justify-between items-center'>
@@ -9,9 +11,9 @@ const Navigation = () => {
 					<span className='text-xl'>FamilyFlow</span>
 				</div>
 				<div className='flex gap-4'>
-					{/* <button onClick={handleBudgetView}>Budżet</button>
-					<button onClick={handleTaskView}>Zadania</button>
-					<button onClick={handleCalendarView}>Kalendarz</button> */}
+					<Button onClick={onBudgetClick}>Budżet</Button>
+					<Button onClick={onTaskClick}>Zadania</Button>
+					<Button onClick={onCalendarClick}>Kalendarz</Button>
 				</div>
 			</div>
 		</div>
