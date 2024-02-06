@@ -68,9 +68,13 @@ button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 } */
 
+input,select{
+	background: #ffffff;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
-		color: #3f6280;
+		color: #031d34;
 		background-color: #e4e7ec;
 	}
 	a:hover {

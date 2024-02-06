@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from "react"
-import Button from "./Button"
+import Button from "../Button"
 
 function FormModal({ isOpen, onClose, onSubmit, labels, initialValues }) {
 	const [name, setName] = useState(initialValues.name)
-	const [amount, setAmount] = useState(0)
+	const [amount, setAmount] = useState(initialValues.amount)
 
 	useEffect(() => {
-		setName(initialValues.name)
-		setAmount(initialValues.amount)
+		setName(initialValues?.name)
+		setAmount(initialValues?.amount)
 	}, [initialValues])
 
 	const handleSubmit = e => {
 		e.preventDefault()
-		onSubmit({ name, amount: Number(amount) })
+		if (onSubmit) {
+			onSubmit({ name, amount: Number(amount) })
+		}
 		onClose()
 	}
-
+	
 	return (
 		<div
 			style={{ display: isOpen ? "block" : "none" }}
-			className='flex flex-col justify-start items-start h-full bg-slate-300 w-full rounded-lg p-2'
+			className='fixed inset-0 flex justify-center items-center  flex-col h-fit  w-3/4 lg:w-1/3 mx-auto bg-slate-300 top-44 rounded-lg px-2 py-8 shadow-xl'
 		>
 			<form onSubmit={handleSubmit} className='w-full h-full'>
-				<div className='flex gap-10'>
+				<div className='flex gap-6'>
 					<div className='w-1/2 flex flex-col justify-center items-center'>
 						<label className='w-full' htmlFor={`form-name-${labels.name}`}>
 							{labels.nameLabel}

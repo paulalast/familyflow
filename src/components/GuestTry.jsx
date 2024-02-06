@@ -6,6 +6,9 @@ import CalendarView from "./CalendarView"
 
 const GuestTry = () => {
 	const [currentView, setCurrentView] = useState("Budget")
+	const [editingItem, setEditingItem] = useState(null)
+	const [isEditing, setIsEditing] = useState(false)
+
 	const handleBudgetView = () => {
 		setCurrentView("Budget")
 	}
@@ -23,10 +26,14 @@ const GuestTry = () => {
 	})
 
 	const addNewIncome = income => {
-		setBudgetData(prevData => ({
-			...prevData,
-			incomes: [...prevData.incomes, income],
-		}))
+		if (income && income.amount !== undefined) {
+			setBudgetData(prevData => ({
+				...prevData,
+				incomes: [...prevData.incomes, income],
+			}))
+		} else {
+			console.error("wrong", income)
+		}
 	}
 
 	const addNewExpense = expense => {
@@ -65,6 +72,12 @@ const GuestTry = () => {
 			),
 		}))
 	}
+	const openEditModal = (item, type) => {
+		setEditData(item)
+		setIsModalOpen(true)
+		setModalType(type)
+	}
+
 
 	let contentView = null
 
@@ -79,6 +92,7 @@ const GuestTry = () => {
 				editIncome={editIncome}
 				removeExpense={removeExpense}
 				editExpense={editExpense}
+				openEditModal={openEditModal}
 			/>
 		)
 	} else if (currentView === "Tasks") {

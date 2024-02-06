@@ -7,8 +7,8 @@ const Navigation = ({ onBudgetClick, onCalendarClick, onTaskClick }) => {
 		<div className='h-fit fixed top-0 left-0 w-full bg-white/60 text-lg '>
 			<div className='container mx-auto flex justify-between items-center'>
 				<div className='flex justify-center items-center flex-col py-2'>
-					<img src='./src/assets/home.png' alt='homelogo' className='w-10' />
-					<span className='text-xl'>FamilyFlow</span>
+					<img src='./src/assets/home.png' alt='homelogo' className='w-6' />
+					<span className='text-lg'>FamilyFlow</span>
 				</div>
 				<div className='flex gap-4'>
 					<Button onClick={onBudgetClick}>Budżet</Button>
